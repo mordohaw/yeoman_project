@@ -130,6 +130,12 @@ gulp.task('serve:dist', ['default'], () => {
   });
 });
 
+//ajout
+gulp.task('deploy', ['default'], () => {
+  return gulp.src('dist/**/*')
+    .pipe($.ghPages());
+});
+
 gulp.task('serve:test', ['scripts'], () => {
   browserSync.init({
     notify: false,
